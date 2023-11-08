@@ -1,0 +1,105 @@
+<div class="form">
+  <img src="assets/logoBlack.png" alt="logo">
+  <h3>Inscrivez vous sur Teach Connect</h3>
+  <form [formGroup]="signupForm">
+    <div class="select">
+      <mat-radio-group aria-label="Select an option">
+        <mat-radio-button [checked]="schoolSign" (change)="schoolSelected($event)" >Ecole</mat-radio-button>
+        <mat-radio-button [checked]="teacherSign" (change)="teacherSelected($event)" value="2">Professeur</mat-radio-button>
+      </mat-radio-group>
+    </div>
+
+    <div class="sections teacher" *ngIf="teacherSign">
+      <div class="section">
+        <mat-form-field class="example-full-width">
+          <mat-label>Nom</mat-label>
+          <input formControlName="name" matInput>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Compétences</mat-label>
+          <input formControlName="skills" matInput>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Diplômé</mat-label>
+          <input formControlName="graduate" matInput>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Centre d'intérêt</mat-label>
+          <input formControlName="interest" matInput>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Niveau souhaité</mat-label>
+          <input formControlName="wishLevel" matInput>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Mot de passe</mat-label>
+          <input type="password" formControlName="password" matInput>
+        </mat-form-field>
+
+      </div>
+      <div class="section">
+        <mat-form-field class="example-full-width">
+          <mat-label>Email</mat-label>
+          <input formControlName="email" matInput>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Téléphone</mat-label>
+          <input formControlName="phone" matInput>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Site web</mat-label>
+          <input formControlName="website" matInput>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Disponibilité</mat-label>
+          <input formControlName="availability" matInput>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Type de contrat souhaité</mat-label>
+          <input formControlName="wishContractType" matInput>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Autres informations sur l'enseignant</mat-label>
+          <input formControlName="otherDataAboutTeacher" matInput>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Références</mat-label>
+          <input formControlName="references" matInput>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="sections school" *ngIf="schoolSign">
+      <div class="section">
+        <mat-form-field class="example-full-width">
+          <mat-label>name</mat-label>
+          <input formControlName="name" matInput>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>email</mat-label>
+          <input formControlName="email" matInput>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Mot de passe</mat-label>
+          <input type="password" formControlName="password" matInput>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <button (click)="submitSign()" mat-raised-button color="primary">S'inscrire</button>
+    <p class="error" *ngIf="error">Une erreur est survenu, vérifier votre formulaire</p>
+    <p>Vous avez un compte <span class="click" routerLink="/">Connectez vous</span></p>
+  </form>
+</div>

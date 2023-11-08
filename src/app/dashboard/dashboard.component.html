@@ -1,0 +1,90 @@
+<div class="entry">
+  <div class="banner">
+    <h3>Profil : </h3>
+    <span *ngIf="true" class="material-symbols-outlined">school</span>
+    <span *ngIf="ma.currentRoleLogged == 1" class="material-symbols-outlined">emoji_people</span>
+  </div>
+  <div class="navigate">
+    <div class="section school" *ngIf="ma.currentRoleLogged == 0">
+      <button class="publish" (click)="displayOfferPublish()">
+        Publier une offre
+      </button>
+      <button class="see" (click)="displayOffer()">
+        Voir mes offres
+      </button>
+    </div>
+    <div class="section school" *ngIf="ma.currentRoleLogged == 1">
+      <button class="publish">
+        Voir les offres disponibles
+      </button>
+      <button class="see" (click)="seeOffer = !seeOffer">
+        Voir mes offres
+      </button>
+    </div>
+  </div>
+</div>
+
+
+<div class="popup offers" *ngIf="seeOffer">
+  <span class="close material-symbols-outlined" (click)="seeOffer = false">cancel</span>
+  <h3>Mes offres</h3>
+  <div class="item" *ngFor="let offer of ma.getPublishOfferForSchool()" (click)="displayOffeerDetails(offer.skills)">
+    <div class="skill">
+      <h5>Compétences</h5>
+      <p>{{offer.skills}}</p>
+    </div>
+    <div class="constraint">
+      <h5>Exigences</h5>
+      <p>{{offer.constraint}}</p>
+    </div>
+    <div class="period">
+      <h5>Période</h5>
+      <p>{{offer.period}}</p>
+    </div>
+  </div>
+  <div class="noOfferExist" *ngIf="ma.getPublishOfferForSchool().length === 0">
+    Vous n'avez pas de besoins pour le moment
+  </div>
+</div>
+
+<div class="popup offersDetails" *ngIf="seeOfferDetails">
+  <span class="close material-symbols-outlined" (click)="seeOfferDetails = false">cancel</span>
+  <h3>{{this.ma.currentOfferDetails.skills}}</h3>
+  <p>{{this.ma.currentOfferDetails.constraint}}</p>
+  <p>{{this.ma.currentOfferDetails.notes}}</p>
+  <p>{{this.ma.currentOfferDetails.period}}</p>
+  <div class="teacherApplying">
+    <div class="itemTeacher" *ngFor="let teacher of this.ma.currentOfferDetails.teacherInterested">
+      <h3>{{teacher.name}}</h3>
+    </div>
+  </div>
+</div>
+
+<div class="popup publish" *ngIf="seePublishOffer">
+  <span class="close material-symbols-outlined" (click)="seePublishOffer = false">cancel</span>
+  <h3>Publier une offre</h3>
+
+  <form [formGroup]="publishOffer" >
+    <mat-form-field class="example-full-width">
+      <mat-label>Compétences requises</mat-label>
+      <input formControlName="skills" matInput >
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Contraintes</mat-label>
+      <input formControlName="constraint" matInput type="password" >
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Période</mat-label>
+      <input formControlName="period" matInput >
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Notes</mat-label>
+      <input formControlName="notes" matInput>
+    </mat-form-field>
+
+    <button (click)="submitOffer()" class="btn" mat-raised-button color="primary" [disabled]="!formIsValid()">Publier</button>
+  </form>
+</div>

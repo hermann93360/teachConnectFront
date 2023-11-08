@@ -1,0 +1,29 @@
+.form{
+  img{
+    width: 150px;
+    padding-bottom: 15px;
+  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: white;
+  width: 400px;
+  border-radius: 10px;
+  form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    p{
+      margin-top: 10px;
+      font-family: "Poppins";
+      text-align: right;
+
+      .click{
+        cursor: pointer;
+        color: #c2c2c2;
+      }
+    }
+  }
+}

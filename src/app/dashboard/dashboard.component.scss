@@ -1,0 +1,117 @@
+.banner{
+  background-color: white;
+  width: 500px;
+  padding: 10px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h3{
+    margin: 0;
+    font-family: "League Spartan";
+    font-size: 20px;
+}
+  span{
+    font-weight: 600;
+    margin-left: 5px;
+  }
+}
+.navigate{
+  margin-top: 10px;
+  background-color: white;
+  width: 500px;
+  height: 500px;
+  padding: 10px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .section{
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+  }
+}
+button{
+  cursor: pointer;
+  background-color: #1a1e23;
+  color: white;
+  border: transparent;
+  font-family: "League Spartan";
+  font-size: 30px;
+  padding: 20px;
+  border-radius: 15px;
+  width: 49%;
+  height: 100%;
+}
+button:hover{
+  background-color: #2f3741;
+}
+
+.popup{
+  background-color: #eaeaea;
+  padding: 15px;
+  position: absolute;
+  top: 50%; left: 50%; /* à 50%/50% du parent référent */
+  transform: translate(-50%, -50%); /* décalage de 50% de sa propre taille */
+  display: flex;
+  width: 650px;
+  flex-direction: column;
+  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
+  border-radius: 15px;
+.close{
+  position: absolute;
+  right: 10px;
+ cursor: pointer;
+  top: 10px;
+}
+  h3{
+    font-family: "League Spartan";
+    font-size: 35px;
+    color: #1f242a;
+  }
+
+  .item{
+    cursor: pointer;
+    background-color: #c2c2c2;
+    padding: 7px;
+    border-radius: 10px;
+    display: flex;
+    margin-top: 5px;
+    div{
+      flex: 1;
+      h5{
+        font-size: 14px;
+        font-family: "League Spartan";
+        margin: 0;
+      }
+
+      p{
+        font-family: Poppins;
+        font-size: 12px;
+        margin: 0;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        max-width: 200px;
+      }
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+  }
+
+.item:hover{
+  background-color: #afafaf;
+}
+}
+.publish form{
+  display: flex;
+  flex-direction: column;
+
+  .btn {
+    width: 100%;
+  }
+}

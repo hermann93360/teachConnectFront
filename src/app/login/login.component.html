@@ -1,0 +1,18 @@
+<div class="form">
+  <img src="assets/logoBlack.png" alt="logo">
+  <form [formGroup]="loginForm" >
+    <mat-form-field class="example-full-width">
+      <mat-label>Login</mat-label>
+      <input formControlName="login" matInput >
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Mot de passe</mat-label>
+      <input formControlName="password" matInput type="password" >
+    </mat-form-field>
+
+    <button (click)="submitLogin()" mat-raised-button color="primary">Se connecter</button>
+    <p class="error" *ngIf="error">Login ou mot de passe incorrect</p>
+    <p>Vous n'avez pas de compte ? <span class="click" routerLink="/sign">Inscrivez vous</span></p>
+  </form>
+</div>

@@ -1,0 +1,58 @@
+.form{
+  h3{
+    font-family: Poppins;
+    font-weight: 600;
+    color: #1a1e23;
+    font-size: 20px;
+  }
+  img{
+    width: 150px;
+    padding-bottom: 10px;
+  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: white;
+  width: 600px;
+  border-radius: 10px;
+  form{
+    .select{
+      display: flex;
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .school .section{
+      width: 100% !important;
+    }
+    .sections{
+      display: flex;
+      justify-content: space-between;
+
+      .section{
+        width: 49%;
+
+        *{
+          width: 100%;
+        }
+      }
+    }
+    p{
+      margin-top: 10px;
+      font-family: "Poppins";
+      text-align: right;
+
+      .click{
+        cursor: pointer;
+        color: #c2c2c2;
+      }
+    }
+  }
+}
+.error{
+  color: red;
+}
